@@ -1,6 +1,23 @@
+@import url('./assets/components/Block/Block.css');
+@import url('./assets/components/Button/Button.css');
+@import url('./assets/components/Select/Select.css');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.converter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: rgba(220, 239, 229, 0.87);
+  min-width: 600px;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: auto;
 }
