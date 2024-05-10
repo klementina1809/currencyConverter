@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Button({title, color}) {
+function Button({title}) {
   return (
-    <button className={`hover-${color}`}>
+    <button>
       {title}
     </button>
   )

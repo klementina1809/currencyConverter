@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Select() {
-  return (
-    <div>
-      
-    </div>
-  )
+	return <select name="" id=""></select>;
 }
 
-export default Select
+export default Select;

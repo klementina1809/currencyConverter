@@ -7,12 +7,12 @@ function Block() {
 	return (
 		<div className="block-container">
 			<div className="buttons-bar">
-				<Button title="EUR" color="green" />
-				<Button title="USD" color="green" />
-				<Button title="JPY" color="green" />
-				<Select/>
+				<Button title="EUR" />
+				<Button title="USD" />
+				<Button title="JPY" />
+				<Select />
 			</div>
-      <Input/>
+			<Input />
 		</div>
 	);
 }

@@ -1,0 +1,10 @@
+select {
+	background-color: var(--secondary-color);
+  color: var(--text-primary);
+  border: 1px solid var(--text-secondary);
+  flex: 1;
+  outline: none;
+
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
