@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import Freecurrencyapi from "@everapi/freecurrencyapi-js";
+
 import Block from "./assets/components/Block.jsx";
 import "./assets/styles/Converter.css";
+import { getData } from "./assets/services/api";
 
 function Converter() {
 	const [baseCurrency, setBaseCurrency] = useState("");
@@ -9,12 +10,22 @@ function Converter() {
 	const [inputValue, setInputValue] = useState("");
 	const [outputValue, setOutputValue] = useState(0);
 
-	const API = new Freecurrencyapi(
-		"fca_live_93bzKchjgLOw4IWEws1ZpjVYkc1lRiih0zIeRARN"
-	);
+	// useEffect(() => {
+	// 	API.latest({
+	// 		base_currency: baseCurrency,
+	// 		currencies: currency,
+	// 	}).then((response) => {
+	// 		console.log(response.data);
+	// 	});
+	// }, [baseCurrency]);
 
 	useEffect(() => {
-		if (inputValue != "") {
+		async function dataCurrency() {
+			const response = await getData(baseCurrency, currency);
+			console.log(response.data);
+			handleCalculatedOutput(response.data);
+		}
+		if (inputValue !== "") {
 			console.log("baseCurrency", baseCurrency);
 			console.log("currency", currency);
 			console.log("inputValue", inputValue);
@@ -26,14 +37,7 @@ function Converter() {
 				setInputValue("");
 				return;
 			}
-
-			API.latest({
-				base_currency: baseCurrency,
-				currencies: currency,
-			}).then((response) => {
-				console.log(response.data);
-				handleCalculatedOutput(response.data);
-			});
+			dataCurrency();
 		}
 	}, [inputValue, baseCurrency, currency]);
 
