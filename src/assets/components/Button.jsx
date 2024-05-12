@@ -1,5 +1,3 @@
-import React from "react";
-
 function Button({ title, onselect, classname }) {
 	return (
 		<button onClick={onselect} className={classname}>

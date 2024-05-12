@@ -1,22 +1,17 @@
-import React, { useState, useEffect } from "react";
-import Button from "../Button/Button";
-import Select from "../Select/Select";
-import Input from "../Input/Input";
+import Button from "./Button";
+import Select from "./Select";
+import Input from "./Input";
 
 function Block({
 	baseCurrency,
-	setBaseCurrency,
 	currency,
-	setCurrency,
 	status,
 	inputValue,
 	outputValue,
 	setInputValue,
-	setOutputValue,
 	handleChangeCurrency,
 	handleChangeBaseCurrency,
 }) {
-
 	const defaultCurrencies = ["EUR", "USD", "AUD"];
 
 	const handleChangeValue = (e) => {

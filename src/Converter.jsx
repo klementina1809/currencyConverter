@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Freecurrencyapi from "@everapi/freecurrencyapi-js";
-import Block from "./assets/components/Block/Block";
-import "./Converter.css";
+import Block from "./assets/components/Block.jsx";
+import "./assets/styles/Converter.css";
 
 function Converter() {
 	const [baseCurrency, setBaseCurrency] = useState("");
@@ -57,15 +57,12 @@ function Converter() {
 				inputValue={inputValue}
 				setInputValue={setInputValue}
 				baseCurrency={baseCurrency}
-				setBaseCurrency={setBaseCurrency}
 				status={false}
 				handleChangeBaseCurrency={handleChangeBaseCurrency}
 			/>
 			<Block
 				outputValue={outputValue}
-				setOutputValue={setOutputValue}
 				currency={currency}
-				setCurrency={setCurrency}
 				status={true}
 				handleChangeCurrency={handleChangeCurrency}
 			/>

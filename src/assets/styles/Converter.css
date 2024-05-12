@@ -1,3 +1,8 @@
+@import url("Block.css");
+@import url("Button.css");
+@import url("Select.css");
+@import url("Input.css");
+
 .converter-container {
 	display: flex;
 	flex-direction: row;
