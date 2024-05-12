@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function Button({title}) {
-  return (
-    <button>
-      {title}
-    </button>
-  )
+function Button({ title, onselect, classname }) {
+	return (
+		<button onClick={onselect} className={classname}>
+			{title}
+		</button>
+	);
 }
 
-export default Button
+export default Button;

@@ -1,12 +1,11 @@
-.block-container{
-  flex: 1;
+.block-container {
+	flex: 1;
 }
 
-.buttons-bar{
-  width: 100%;
-  margin-bottom: 1rem;
-  display: flex;
-  /* border-radius: 8px; */
-  overflow: hidden;
+.buttons-bar {
+	width: 100%;
+	margin-bottom: 1rem;
+	display: flex;
+	/* border-radius: 8px; */
+	overflow: hidden;
 }
-

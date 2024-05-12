@@ -1,44 +1,43 @@
-@import url('./assets/components/Block/Block.css');
-@import url('./assets/components/Button/Button.css');
-@import url('./assets/components/Select/Select.css');
-@import url('./assets/components/Input/Input.css');
+@import url("./assets/components/Block/Block.css");
+@import url("./assets/components/Button/Button.css");
+@import url("./assets/components/Select/Select.css");
+@import url("./assets/components/Input/Input.css");
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
 
-  color: var(--text-primary);
-  background-color: var(--primary-color);
+	color: var(--text-primary);
+	background-color: var(--primary-color);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
-  --primary-color: rgba(201, 233, 215, 0.87);
-  --secondary-color: rgba(220, 239, 229, 0.87);
-  --text-primary: rgba(28, 28, 28, 0.87);
-  --text-secondary: rgba(193, 193, 193, 0.87);
+	--primary-color: rgba(201, 233, 215, 0.87);
+	--secondary-color: rgba(226, 245, 235, 0.87);
+	--text-primary: rgba(28, 28, 28, 0.87);
+	--text-secondary: rgba(193, 193, 193, 0.87);
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+	margin: 0;
+	display: flex;
+	place-items: center;
+	min-width: 320px;
+	min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+	font-size: 3.2em;
+	line-height: 1.1;
 }
 
-
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
 }
