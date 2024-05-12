@@ -14,35 +14,34 @@ function Converter() {
 	);
 
 	useEffect(() => {
-		console.log("inputValue", inputValue);
-	}, [inputValue]);
+		if (inputValue != "") {
+			console.log("baseCurrency", baseCurrency);
+			console.log("currency", currency);
+			console.log("inputValue", inputValue);
+
+			if (inputValue === "" || baseCurrency === "" || currency === "") {
+				alert(
+					"Invalid data format. Please fill in all the necessary information."
+				);
+				setInputValue("");
+				return;
+			}
+
+			API.latest({
+				base_currency: baseCurrency,
+				currencies: currency,
+			}).then((response) => {
+				console.log(response.data);
+				handleCalculatedOutput(response.data);
+			});
+		}
+	}, [inputValue, baseCurrency, currency]);
 
 	const handleChangeCurrency = (cur) => {
 		setCurrency(cur);
 	};
 	const handleChangeBaseCurrency = (cur) => {
 		setBaseCurrency(cur);
-	};
-
-	const handleConvert = () => {
-		console.log("baseCurrency", baseCurrency);
-		console.log("currency", currency);
-		console.log("inputValue", inputValue);
-
-		if (inputValue === "" || baseCurrency === "" || currency === "") {
-			alert(
-				"Invalid data format. Please fill in all the necessary information."
-			);
-			return;
-		}
-
-		API.latest({
-			base_currency: baseCurrency,
-			currencies: currency,
-		}).then((response) => {
-			console.log(response.data);
-			handleCalculatedOutput(response.data);
-		});
 	};
 
 	const handleCalculatedOutput = (data) => {
@@ -66,7 +65,6 @@ function Converter() {
 				status={true}
 				handleChangeCurrency={handleChangeCurrency}
 			/>
-			<button onClick={handleConvert}>go</button>
 		</div>
 	);
 }
