@@ -13,10 +13,9 @@ function Converter() {
 		"fca_live_93bzKchjgLOw4IWEws1ZpjVYkc1lRiih0zIeRARN"
 	);
 
-	// useEffect(() => {
-	// 	console.log("currency", currency);
-	// 	console.log("baseCurrency", baseCurrency);
-	// }, [baseCurrency, currency]);
+	useEffect(() => {
+		console.log("inputValue", inputValue);
+	}, [inputValue]);
 
 	const handleChangeCurrency = (cur) => {
 		setCurrency(cur);
@@ -28,14 +27,28 @@ function Converter() {
 	const handleConvert = () => {
 		console.log("baseCurrency", baseCurrency);
 		console.log("currency", currency);
+		console.log("inputValue", inputValue);
+
+		if (inputValue === "" || baseCurrency === "" || currency === "") {
+			alert(
+				"Invalid data format. Please fill in all the necessary information."
+			);
+			return;
+		}
 
 		API.latest({
 			base_currency: baseCurrency,
 			currencies: currency,
 		}).then((response) => {
-			console.log(response);
-			setOutputValue(response.data.currency);
+			console.log(response.data);
+			handleCalculatedOutput(response.data);
 		});
+	};
+
+	const handleCalculatedOutput = (data) => {
+		const [coefficient] = Object.values(data);
+		const output = Math.round(inputValue * coefficient * 100) / 100;
+		setOutputValue(output);
 	};
 
 	return (
@@ -47,8 +60,6 @@ function Converter() {
 				setBaseCurrency={setBaseCurrency}
 				status={false}
 				handleChangeBaseCurrency={handleChangeBaseCurrency}
-				
-				
 			/>
 			<Block
 				outputValue={outputValue}
