@@ -10,3 +10,10 @@ export const getData = async (baseCurrency, currency) => {
 		currencies: currency,
 	});
 };
+
+export const getCurrencies = async () => {
+	return await API.latest({
+		base_currency: '',
+		currencies: '',
+	});
+};

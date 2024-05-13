@@ -12,7 +12,7 @@ function Block({
 	handleChangeCurrency,
 	handleChangeBaseCurrency,
 }) {
-	const defaultCurrencies = ["EUR", "USD", "AUD"];
+	const defaultCurrencies = ["EUR", "USD", "JPY"];
 
 	const handleChangeValue = (e) => {
 		setInputValue(e.target.value);
@@ -37,7 +37,12 @@ function Block({
 						}
 					/>
 				))}
-				<Select />
+				<Select
+					baseCurrency={baseCurrency}
+					currency={currency}
+					handleChangeBaseCurrency={handleChangeBaseCurrency}
+					handleChangeCurrency={handleChangeCurrency}
+				/>
 			</div>
 			<Input
 				status={status}
