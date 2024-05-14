@@ -8,3 +8,11 @@ select {
 	cursor: pointer;
 	padding: 0.5rem 1rem;
 }
+
+option.active {
+	background-color: rgba(177, 205, 189, 0.733);
+}
+
+select:hover{
+	background-color: rgba(177, 205, 189, 0.733);
+}

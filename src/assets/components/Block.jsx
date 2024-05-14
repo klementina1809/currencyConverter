@@ -40,8 +40,9 @@ function Block({
 				<Select
 					baseCurrency={baseCurrency}
 					currency={currency}
-					handleChangeBaseCurrency={handleChangeBaseCurrency}
-					handleChangeCurrency={handleChangeCurrency}
+					changeCurrency={
+						status ? handleChangeCurrency : handleChangeBaseCurrency
+					}
 				/>
 			</div>
 			<Input

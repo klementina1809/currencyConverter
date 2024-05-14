@@ -9,21 +9,16 @@ const API = new Freecurrencyapi(
 	"fca_live_93bzKchjgLOw4IWEws1ZpjVYkc1lRiih0zIeRARN"
 );
 
-
 function Converter() {
 	const [baseCurrency, setBaseCurrency] = useState("");
 	const [currency, setCurrency] = useState("");
 	const [inputValue, setInputValue] = useState("");
 	const [outputValue, setOutputValue] = useState(0);
 
-	// useEffect(() => {
-	// 	API.latest({
-	// 		base_currency: baseCurrency,
-	// 		currencies: currency,
-	// 	}).then((response) => {
-	// 		console.log(response.data);
-	// 	});
-	// }, [baseCurrency]);
+	useEffect(() => {
+		console.log('currency',currency);
+		console.log('baseCurrency',baseCurrency);
+	}, [currency, baseCurrency]);
 
 	useEffect(() => {
 		async function dataCurrency() {
@@ -47,14 +42,14 @@ function Converter() {
 		}
 	}, [inputValue, baseCurrency, currency]);
 
-	const handleconvert = () => {
-		API.latest({
-			base_currency: "",
-			currencies: "",
-		}).then((response) => {
-			console.log(response);
-		});
-	};
+	// const handleconvert = () => {
+	// 	API.latest({
+	// 		base_currency: "",
+	// 		currencies: "",
+	// 	}).then((response) => {
+	// 		console.log(response);
+	// 	});
+	// };
 
 	const handleChangeCurrency = (cur) => {
 		setCurrency(cur);
@@ -71,7 +66,7 @@ function Converter() {
 
 	return (
 		<div className="converter-container">
-			<button onClick={handleconvert}>convert</button>
+			{/* <button onClick={handleconvert}>convert</button> */}
 			<Block
 				inputValue={inputValue}
 				setInputValue={setInputValue}
