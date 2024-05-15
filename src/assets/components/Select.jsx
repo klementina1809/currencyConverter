@@ -9,7 +9,10 @@ function Select({ currency, baseCurrency, changeCurrency }) {
 			try {
 				const response = await getCurrencies();
 				const currenciesData = Object.keys(response.data);
-				setCurrencies(currenciesData);
+				const filteredData = currenciesData.filter(
+					(cur) => cur !== "EUR" && cur !== "USD" && cur !== "JPY"
+				);
+				setCurrencies(filteredData);
 			} catch (error) {
 				console.error("Error fetching currencies:", error);
 			}
@@ -22,25 +25,32 @@ function Select({ currency, baseCurrency, changeCurrency }) {
 
 	const memoizedCurrencies = useMemo(() => currencies, [currencies]);
 
-  return (
-    <select
-      name="currencies"
-      id="currencies"
-      onChange={(e) => changeCurrency(e.target.value)}
-      className={memoizedCurrencies.some(cur => baseCurrency === cur || currency === cur) ? "active" : ""}
-    >
-      {memoizedCurrencies.map((cur) => (
-        <option
-          key={cur}
-          value={cur}
-          className={baseCurrency === cur || currency === cur ? "active" : ""}
-        >
-          {cur}
-        </option>
-      ))}
-    </select>
-  );
-  
+	return (
+		<select
+			name="currencies"
+			id="currencies"
+			onChange={(e) => changeCurrency(e.target.value)}
+			className={
+				memoizedCurrencies.some(
+					(cur) => baseCurrency === cur || currency === cur
+				)
+					? "active"
+					: ""
+			}
+		>
+			{memoizedCurrencies.map((cur) => (
+				<option
+					key={cur}
+					value={cur}
+					className={
+						baseCurrency === cur || currency === cur ? "active" : ""
+					}
+				>
+					{cur}
+				</option>
+			))}
+		</select>
+	);
 }
 
 export default Select;
