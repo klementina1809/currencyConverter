@@ -3,11 +3,6 @@ import { useState, useEffect } from "react";
 import Block from "./assets/components/Block.jsx";
 import "./assets/styles/Converter.css";
 import { getData } from "./assets/services/api";
-import Freecurrencyapi from "@everapi/freecurrencyapi-js";
-
-const API = new Freecurrencyapi(
-	"fca_live_93bzKchjgLOw4IWEws1ZpjVYkc1lRiih0zIeRARN"
-);
 
 function Converter() {
 	const [baseCurrency, setBaseCurrency] = useState("");
@@ -16,8 +11,8 @@ function Converter() {
 	const [outputValue, setOutputValue] = useState(0);
 
 	useEffect(() => {
-		console.log('currency',currency);
-		console.log('baseCurrency',baseCurrency);
+		console.log("currency", currency);
+		console.log("baseCurrency", baseCurrency);
 	}, [currency, baseCurrency]);
 
 	useEffect(() => {
@@ -42,15 +37,6 @@ function Converter() {
 		}
 	}, [inputValue, baseCurrency, currency]);
 
-	// const handleconvert = () => {
-	// 	API.latest({
-	// 		base_currency: "",
-	// 		currencies: "",
-	// 	}).then((response) => {
-	// 		console.log(response);
-	// 	});
-	// };
-
 	const handleChangeCurrency = (cur) => {
 		setCurrency(cur);
 	};
@@ -66,7 +52,6 @@ function Converter() {
 
 	return (
 		<div className="converter-container">
-			{/* <button onClick={handleconvert}>convert</button> */}
 			<Block
 				inputValue={inputValue}
 				setInputValue={setInputValue}

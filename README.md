@@ -1,8 +1,27 @@
-# React + Vite
+# Currency Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### About:
+This project is a straightforward currency converter application powered by an API request. Users select two currencies — source and target — then input an amount to be automatically converted into the desired currency. Currency selection is facilitated through buttons or a dropdown menu, providing a user-friendly experience for seamless conversion between the most common currencies.
 
-Currently, two official plugins are available:
+### Demo:
+<a href="https://klementina1809.github.io/currencyConverter/">
+<img src="public/preview.png" alt="preview" />
+</a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technologies Used:
+![Static Badge](https://img.shields.io/badge/React-ffffff?style=social&logo=React)
+![Static Badge](https://img.shields.io/badge/HTML5-ffffff?style=social&logo=HTML5)
+![Static Badge](https://img.shields.io/badge/CSS3-ffffff?style=social&logo=CSS3)
+![Static Badge](https://img.shields.io/badge/JavaScript-ffffff?style=social&logo=JavaScript)
+
+
+### Packages Used:
+- [JS Currency Converter](https://www.npmjs.com/package/@everapi/freecurrencyapi-js)
+
+
+### Other Links:
+- [Free Currency Api](https://app.freecurrencyapi.com/)
+
+
+
+
