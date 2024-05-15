@@ -13,6 +13,7 @@ This project is a straightforward currency converter application powered by an A
 ![Static Badge](https://img.shields.io/badge/HTML5-ffffff?style=social&logo=HTML5)
 ![Static Badge](https://img.shields.io/badge/CSS3-ffffff?style=social&logo=CSS3)
 ![Static Badge](https://img.shields.io/badge/JavaScript-ffffff?style=social&logo=JavaScript)
+![Static Badge](https://img.shields.io/badge/npm-ffffff?style=social&logo=npm)
 
 
 ### Packages Used:
